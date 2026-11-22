@@ -25,11 +25,12 @@ curl -fsS -X POST http://127.0.0.1:8080/increment
 cp .env.example .env
 docker compose up -d --build
 
-curl -s -X POST http://127.0.0.1:8000/increment
-curl -s -X POST http://127.0.0.1:8000/increment
-curl -s http://127.0.0.1:8000/
+curl -fsS -X POST http://127.0.0.1:8080/increment
+{"greeting": "Hello from Compose!", "count": 1, "hostname": ..., "storage": "sqlite"}
 
 docker compose down
 docker compose up -d
 
-curl -s http://127.0.0.1:8080/
+curl -fsS http://127.0.0.1:8080/
+{"greeting": "Hello from Compose!", "count": 1, "hostname": ..., "storage": "sqlite"}
+Счётчик сохранился после удаления и создания нового контейнера
