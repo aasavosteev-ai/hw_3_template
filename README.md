@@ -1,3 +1,16 @@
-## Шаблон для третьего ДЗ по ИПР
+На 4 балла
 
-Условие дз доступно по [ссылке](https://github.com/Nikfilk2030/missing_semester_hse_cs/blob/main/2026/amcs/year_1/hw_3/README.md)
+КОД
+sudo docker build -t programm ./app
+
+sudo docker run -d --name counter \
+  -p 8080:8000 \
+  -e PORT=8000 \
+  -e GREETING="Hello from Compose!" \
+  -e STORAGE=sqlite \
+  -e DATA_FILE=/data/counter.db \
+  programm
+
+ПРОВЕРКИ
+curl -s http://127.0.0.1:8080
+curl -s -X POST http://127.0.0.1:8080/increment
