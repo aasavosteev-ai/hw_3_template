@@ -12,5 +12,6 @@ sudo docker run -d --name counter \
   programm
 
 ПРОВЕРКИ
-curl -s http://127.0.0.1:8080
-curl -s -X POST http://127.0.0.1:8080/increment
+curl -fsS http://127.0.0.1:8080/
+{"greeting": "Hello from Compose!", "count: 1", 
+curl -fsS -X POST http://127.0.0.1:8080/increment
