@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: programm:local
+    ports:
+      - "${APP_PORT1:-8080}:${APP_PORT2:-8000}"
+    environment:
+      GREETING: ${GREETING:-"Hello from Compose!"}
+      PORT: ${APP_PORT2:-8000}
+      STORAGE: sqlite
+      DATA_DIR: /data/counter.db
+    volumes:
+      - counter_data:/data
+
+volumes:
+  counter_data:
