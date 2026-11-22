@@ -13,5 +13,23 @@ sudo docker run -d --name counter \
 
 ПРОВЕРКИ
 curl -fsS http://127.0.0.1:8080/
-{"greeting": "Hello from Compose!", "count: 1", 
+{"greeting": "Hello from Compose!", "count": 0, "hostname": ..., "storage": "sqlite"}
 curl -fsS -X POST http://127.0.0.1:8080/increment
+{"greeting": "Hello from Compose!", "count": 1, "hostname": ..., "storage": "sqlite"}
+Увеличение счётчика произошло, приветствие было.
+
+На 6 баллов
+
+Отдельно есть файл compose.yaml, в котором представлена compose
+КОД
+cp .env.example .env
+docker compose up -d --build
+
+curl -s -X POST http://127.0.0.1:8000/increment
+curl -s -X POST http://127.0.0.1:8000/increment
+curl -s http://127.0.0.1:8000/
+
+docker compose down
+docker compose up -d
+
+curl -s http://127.0.0.1:8080/
