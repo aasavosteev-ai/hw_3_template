@@ -35,4 +35,4 @@ docker compose up -d
 
 curl -fsS http://127.0.0.1:8080/
 {"greeting": "Hello from Compose!", "count": 2, "hostname": ..., "storage": "sqlite"}
-Счётчик сохранился после удаления и создания нового контейнера.
+Счётчик сохранился после удаления и повторного создания контейнера.
